@@ -1,0 +1,364 @@
+<doctype html>
+<html lang="en">
+<head>
+<title>TULIP</title>
+<link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAK5QjAC8A/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAQAAAAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAICAgAAAAAAAAAAAAAAAAICAgICAAAAAAAAAAAAAAACAgICAgAAAAAAAAAAAAAAAgICAgIAAAAAAAAAAAAAAAIAAgACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9/AAD+/wAA/v8AAP7/AAD+fwAA/r8AAP7/AAD8fwAA+D8AAPg/AAD4PwAA+r8AAP//AAD//wAA//8AAP//AAA=" rel="icon" type="image/x-icon" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+.header {
+  background-image: url("flower.JPG");
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 16px 18px;
+  text-decoration: none;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Change color on hover */
+.topnav a:hover,.dropdown:hover .dropbtn {
+  background-color: #04AA6D;
+  color: black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+.topnav input[type=text] {
+    border: 2px solid #ccc;
+  }
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+ text-align:center;
+  width: 15%;
+
+}
+
+input[type=text], select, textarea {
+  width: auto ;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  padding: 15px;
+}
+
+/* Middle column */
+.column.middle {
+  text-align:center;
+  width: 70%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.icon-bar {
+  position: fixed;
+  top: auto;
+  bottom:auto;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  align:right;
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+  
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+  .footer {
+  background-image: url("flower.JPG");
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text],.column.side, .column.middle {
+    width: 100%;
+   }
+   }
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>TULIP</h1>
+  <h4>“If you look the right way, you can see that the whole world is a garden.”</h4>
+</div>
+
+<div class="topnav">
+
+<input type="text" placeholder="Search..">
+  <a  class="active" href="#">Home</a>
+  <a href="#">cactus </a>
+  <a href="#">Planets</a>
+  <div class="dropdown">
+    <button class="dropbtn">Flowers 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">ROSES</a>
+      <a href="#">LILIS</a>
+      <a href="#">TULIPS</a>
+	  <a href="#">SPIDER</a>
+	  <a href="#">GERBARA</a>
+    </div>
+  </div> 
+ 
+ 
+</div>
+
+<div class="row">
+  <div class="column side">
+    <h2>shop by accasion</h2>
+ <ul>
+ <li><a href="#">WEDDING</a></li>
+ <li> <a href="#">I LOVE YOU</a></li>
+ <li> <a href="#">THANK YOU</a></li>
+ <li> <a href="#">HAPPY BIRTHDAY</a></li>
+ <li> <a href="#">CONGRATULATIONS</a></li>
+ <li> <a href="#">HAPPY ANNIVERSARY</a></li>
+ </ul>
+ <div class="icon-bar">
+  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+  <a href="#" class="google"><i class="fa fa-google"></i></a> 
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+</div>
+ </div>
+
+  
+  <div class="column middle">
+    <div class="gallery">
+  <a target="_blank" href="https://www.fnp.com/images/pr/l/v20210528162902/mixed-brilliance-gerbera-blossom_1.jpg">
+    <img src="https://www.fnp.com/images/pr/l/v20210528162902/mixed-brilliance-gerbera-blossom_1.jpg" alt="Cinque Terre" width="400" height="200">
+  </a>
+  <div class="desc">Congrtulations</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="https://www.fnp.com/images/pr/l/v20210528162902/mixed-brilliance-gerbera-blossom_1.jpg">
+    <img src="https://www.fnp.com/images/pr/l/v20210528162902/mixed-brilliance-gerbera-blossom_1.jpg" alt="Cinque Terre" width="400" height="200">
+  </a>
+  <div class="desc">Wdding</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="https://www.fnp.com/images/pr/l/v20210528162902/mixed-brilliance-gerbera-blossom_1.jpg">
+    <img src="https://www.fnp.com/images/pr/l/v20210528162902/mixed-brilliance-gerbera-blossom_1.jpg" alt="Cinque Terre" width="400" height="200">
+  </a>
+  <div class="desc">HAPPY ANNIVERSARY</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="https://www.fnp.com/images/pr/l/v20210528162902/mixed-brilliance-gerbera-blossom_1.jpg">
+    <img src="https://www.fnp.com/images/pr/l/v20210528162902/mixed-brilliance-gerbera-blossom_1.jpg" alt="Cinque Terre" width="400" height="200">
+  </a>
+  <div class="desc">THANK YOU</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="https://www.fnp.com/images/pr/l/v20210528162902/mixed-brilliance-gerbera-blossom_1.jpg">
+    <img src="https://www.fnp.com/images/pr/l/v20210528162902/mixed-brilliance-gerbera-blossom_1.jpg" alt="Cinque Terre" width="400" height="200">
+  </a>
+  <div class="desc">I Love You</div>
+</div>
+
+ </div>
+  
+  
+  
+  <div class="column side">
+    <h2>contact us</h2>
+	<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="egypt">Egypt</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>  
+ </div>
+</div>
+
+<div class="footer">
+ <p>© Copyright 2021 | All rights reserved.</p>
+</div>
+  
+</body>
+</html>
